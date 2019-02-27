@@ -5,7 +5,7 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    } from 'reactstrap';
+} from 'reactstrap';
 
 
 class AppNavbar extends React.Component {
@@ -16,11 +16,11 @@ class AppNavbar extends React.Component {
     render() {
         return (
             <div>
-                <Navbar>
-                    <NavbarBrand href="/"> Lumia </NavbarBrand>
+                <Navbar className="nav flex-column flex-sm-row">
+                    <NavbarBrand href="/" className="nav flex-sm-fill text-sm-left nav-link active"> Lumia </NavbarBrand>
                     <Nav>
-                        <NavItem>
-                            <NavLink to = "/kontakt"> Kontakta oss </NavLink>
+                        <NavItem className="text-sm-right nav-link">
+                            <NavLink to="/kontakt" > Kontakta oss </NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>
