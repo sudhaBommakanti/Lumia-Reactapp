@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router,Route} from "react-router-dom";
 import NavBar from '../Navbar/index';
-import ProductsList from '../ProductsList/index';
+import Lamps from '../Lamps/index';
 
 export default function() {
     return <Router>
@@ -10,7 +10,7 @@ export default function() {
             <h1>App process </h1>
             <NavBar />
             <main>
-                <Route exact path='/' component={ProductsList} />
+                <Route exact path='/' component={Lamps} />
             </main>
 
         </div>
