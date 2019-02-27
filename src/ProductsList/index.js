@@ -1,24 +1,29 @@
 import React from 'react';
-import { withRouter, NavLink } from "react-router-dom";
+import ProductsData from '../ProductsData/lamps.json';
 
-export default class Lamps extends React.Component {
+
+export default class ProductsList extends React.Component {
 constructor (props) {
     super(props);
-    this.state = {
+   /*  this.state = {
         lamps: []
-    };
+    }; */
+
+    this.listProducts = props.lamps.map((product) =>
+      <li>{product}</li>
+    )
 }
 
-componentDidMount() {
-    fetch('./lamps.json')
+/* componentDidMount() {
+    fetch('../ProductsData/lamps.json')
     .then(lamps => {
         return lamps.json();
     }).then(data => {
         let lamps = data.lamps.map((lamp) => {
             return(
-                <div key = {lamp.name}>
-                     <img src= {lamp.image}/>
-                </div>
+                <h2>{lamps.name}></h2>
+                     
+               
             )
         })
         this.setState({lamps:lamps});
@@ -36,6 +41,6 @@ render() {
         </div>
     )
 }
-
+ */
 }
 
