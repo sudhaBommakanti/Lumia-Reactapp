@@ -1,41 +1,40 @@
 import React from 'react';
-import { withRouter, NavLink } from "react-router-dom";
+import Data from '../Data/lamps.json';
+import {
+  Container,
+  Row,
+  Col,
+  Button
+} from 'reactstrap';
 
 export default class Lamps extends React.Component {
-constructor (props) {
+  constructor(props) {
     super(props);
-    this.state = {
-        lamps: []
-    };
-}
 
-componentDidMount() {
-    fetch('./lamps.json')
-    .then(lamps => {
-        return lamps.json();
-    }).then(data => {
-        let lamps = data.lamps.map((lamp) => {
-            return(
-                <div key = {lamp.name}>
-                     <img src= {lamp.image}/>
-                </div>
-            )
-        })
-        this.setState({lamps:lamps});
-        console.log("state",this.state.lamps);
-    })
-}
+  }
 
-render() {
+
+  render() {
     return (
-        <div className = "container1">
-            <div className = "container2">
-                {this.state.lamps}
-
-            </div>
-        </div>
+      <Container>
+        <Row>
+          <Col xs="12">
+            {Data.map((lamp, index) => {
+              return <div className="lamps">
+              <div className="product clearfix">
+                <img src={lamp.image} />
+                <div className="content">
+                  <h2>{lamp.name}</h2>
+                  <p>{lamp.description}</p>
+                  <Button>{lamp.cost}</Button>
+                </div>
+              </div>
+              </div>
+            })}
+          </Col>
+        </Row>
+      </Container>
     )
-}
+  }
 
 }
-
