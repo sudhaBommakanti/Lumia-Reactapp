@@ -12,6 +12,7 @@ import {
 export default class Lamps extends React.Component {
   constructor(props) {
     super(props);
+    this.alertFunc();
 
   }
 
@@ -20,12 +21,19 @@ export default class Lamps extends React.Component {
   //   this.setState(state => this)
   // }
 
+  alertFunc() {
+    
+      alert("hello");
+      return 
+    
+  }
+
     render() {
       return (
         <Container>
           <Row>
             <Col xs="12">
-            <Input className="flex-sm-fill text-sm-center nav-link " placeholder="Type to search"></Input>
+            <Input className="flex-sm-fill text-sm-center nav-link" onKeyPress="alertFunc()"  placeholder="Type to search"></Input>
               {Data.map((lamp, index) => {
                 return <div className="lamps">
                 <div className="product clearfix">
